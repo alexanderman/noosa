@@ -14,7 +14,7 @@ I used docker for mongodb image
  - cd process-engine && npm install 
 
 ### Run project
-to run the API and play with it in Postman 
+to run the API and play with it in Postman (you can copy request body from api documentation)
  - cd noosa
  - npm start
  
