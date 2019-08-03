@@ -1,0 +1,4 @@
+module.exports = {
+  BIG_PARTNER: 'BIG_PARTNER',
+  SMALL_PARTNER: 'SMALL_PARTNER'
+}
