@@ -1,5 +1,5 @@
-const transactionModel = require('./models/transaction-model');
-const findCommissionModel = require('./models');
+const transactionModel = require('./commission-models/transaction-model');
+const findCommissionModel = require('./commission-models');
 
 
 const getCommission = (transaction, commissionModel) => {

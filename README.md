@@ -51,6 +51,10 @@ to run the test
 ```
  - **http://localhost:5000/api/process** will process calculated transaction, I assume here, I receive all the needed values, calculated at prevoius api call, the response is the same transaction if succeeded or error message if failed.
 
-
+### TODOS
+ - validate all json data received from the api
+ - keep process-engine commission models in some DB
+ - validate the integrity of process-engine commission models 
+ - create process that processing unfinished transactions
 
 
