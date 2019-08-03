@@ -1,6 +1,6 @@
 const transactionModel = require('./models/transaction-model');
 const findCommissionModel = require('./models');
-require('./database');
+
 
 const getCommission = (transaction, commissionModel) => {
   let commission = transaction.price * commissionModel.commission;
@@ -16,10 +16,10 @@ const getCommission = (transaction, commissionModel) => {
   return commission;
 };
 
-const getCommissionDiscount = (transaction, commissionModel) => {
+const getCommissionDiscount = (transaction, commissionModel, weekendDays) => {
   const now = new Date();
   const dayOfWeek = now.getUTCDay();
-  const weekendDays = [5, 6];
+  // const weekendDays = [5, 6];
 
   if (weekendDays.indexOf(dayOfWeek) > -1) {
     return transaction.commission * commissionModel.commission_weekend_discount;
@@ -42,7 +42,7 @@ const getVat = (transaction, commissionModel) => {
 }
 
 
-const calculate = transactionRequest => {
+const calculate = weekendDays => transactionRequest => {
   
   /** find partner commission details by transaction type and partner id */
   const commissionModel = findCommissionModel(transactionRequest.partnerId, transactionRequest.transactionType);
@@ -51,7 +51,7 @@ const calculate = transactionRequest => {
 
   const transactionResponse = { ...transactionModel, ...transactionRequest };
   transactionResponse.commission = getCommission(transactionResponse, commissionModel);
-  transactionResponse.commission_discount = - getCommissionDiscount(transactionResponse, commissionModel);
+  transactionResponse.commission_discount = - getCommissionDiscount(transactionResponse, commissionModel, weekendDays);
   transactionResponse.vat = getVat(transactionResponse, commissionModel);
   transactionResponse.total_commission = transactionResponse.commission + transactionResponse.commission_discount;
   transactionResponse.total = transactionResponse.price + transactionResponse.total_commission + transactionResponse.vat;

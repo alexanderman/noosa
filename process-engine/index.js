@@ -1,4 +1,4 @@
-const calculate = require('./calculator'); 
+const calculate = require('./calculator')([5, 6]); 
 const database = require('./database');
 const statuses = require('./database/transaction-statuses');
 

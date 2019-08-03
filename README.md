@@ -17,6 +17,9 @@ I used docker for mongodb image
 to run the API and play with it in Postman (you can copy request body from api documentation)
  - cd noosa
  - npm start
+to run the test
+ - cd noosa/process-engine
+ - npm test
  
 ## API Documentation
  - **GET http://localhost:5000/api** will return a list of started but NOT finished transactions
