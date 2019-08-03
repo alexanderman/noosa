@@ -12,6 +12,11 @@ I used docker for mongodb image
  - cd noosa
  - npm install 
  - cd process-engine && npm install 
+
+### Run project
+to run the API and play with it with Postman 
+ - cd noosa
+ - npm start
  
 ## API Documentation
  - **GET http://localhost:5000/api** will return a list of started but NOT finished transactions
