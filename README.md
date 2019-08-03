@@ -20,7 +20,7 @@ to run the API and play with it in Postman
  
 ## API Documentation
  - **GET http://localhost:5000/api** will return a list of started but NOT finished transactions
- - **POST http://localhost:5000/api/calculate** will calculate the commission + vat + total amount to pay
+ - **POST http://localhost:5000/api/calculate** will calculate the commission + vat + total amount to pay  
  request example
 ```json
  {
