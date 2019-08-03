@@ -8,7 +8,7 @@ I used docker for mongodb image
  - docker run -d -p 27099:27017 --name mongo mongo:4.0.11
 
 ### Installation
- - git clone 
+ - git clone https://github.com/alexanderman/noosa.git
  - cd noosa
  - npm install 
  - cd process-engine && npm install 
